@@ -1,3 +1,11 @@
 <p>
   message-component works!
 </p>
+<div *ngFor="let message of messages">
+  <mat-card>
+    <mat-card-title>
+      {{message.owner}}
+    </mat-card-title>
+    {{message.text}}
+  </mat-card>
+</div>
