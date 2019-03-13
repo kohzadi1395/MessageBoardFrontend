@@ -14,7 +14,8 @@ export class MessageComponentComponent implements OnInit {
   }
 
   async ngOnInit() {
-    var response = await this.webService.getMessage();
+    let response = await this.webService.getMessage();
+    // console.log(response.json());
     this.messages = response.json();
   }
 

@@ -7,6 +7,7 @@ import {MatCardModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WebService} from "./web-service";
 import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]
