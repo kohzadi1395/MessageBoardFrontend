@@ -8,11 +8,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WebService} from "./web-service";
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import {NewMessageComponent} from './new-message/new-message.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessageComponentComponent
+    MessageComponentComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import {HttpModule} from '@angular/http';
     MatCardModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

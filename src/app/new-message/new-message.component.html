@@ -1,0 +1,13 @@
+<mat-card class="card">
+  <mat-card-title>
+    <p>New Message</p>
+  </mat-card-title>
+  <mat-card-content>
+    <input [(ngModel)]="message.owner" placeholder="Name">
+    <br>
+    <textarea [(ngModel)]="message.text" placeholder="Text"></textarea>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="post()" matColumnDef="#00ff00">Post</button>
+  </mat-card-actions>
+</mat-card>
