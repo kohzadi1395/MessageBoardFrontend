@@ -12,13 +12,26 @@ import {NewMessageComponent} from './new-message/new-message.component';
 import {FormsModule} from "@angular/forms";
 import {NavcomponentComponent} from './navcomponent/navcomponent.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {RouterModule} from "@angular/router";
+import {HomeComponent} from './home/home.component';
+
+
+const routes = [{
+  path: '',
+  component: HomeComponent
+},
+  {
+    path: 'messages',
+    component: MessageComponentComponent
+  }];
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponentComponent,
     NewMessageComponent,
-    NavcomponentComponent
+    NavcomponentComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +41,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
 
   ],
   providers: [WebService],
