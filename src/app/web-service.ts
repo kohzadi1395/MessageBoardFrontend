@@ -7,26 +7,34 @@ export class WebService {
   public messages = [];
 
   constructor(private http: Http) {//, private snackBar:MatSnackBar) {
-    this.getMessage();
+    this.getMessage(null);
   }
 
-  async getMessage() {
-    try {
-      let response = await this.http.get(this.Base_Url + '/Messages').toPromise();
+  // async getMessage(user) {
+  //   try {
+  //     user = (user) ? '/' + user : '';
+  //     let response = await this.http.get(this.Base_Url + '/Messages' + user).toPromise();
+  //     this.messages = response.json()
+  //   }
+  //   catch (e) {
+  //     this.handleError('Unable to get message');
+  //   }
+  //
+  // }
+  getMessage(user) {
+    user = (user) ? '/' + user : '';
+    this.http.get(this.Base_Url + '/Messages' + user).subscribe(response => {
       this.messages = response.json()
-    }
-    catch (e) {
+    }, error => {
       this.handleError('Unable to get message');
-    }
-
+    });
   }
 
   async postMessage(message) {
     try {
-      let response = await this.http.post(this.Base_Url + '/Messages', message).toPromise();
-
-      this.messages.push(response.json())
-
+      await this.http.post(this.Base_Url + '/Messages', message).toPromise();
+      // this.messages.push(message)
+      this.getMessage(null);
     }
     catch (e) {
       this.handleError('Unable to post message');

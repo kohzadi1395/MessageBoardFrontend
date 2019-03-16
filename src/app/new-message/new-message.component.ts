@@ -26,7 +26,7 @@ export class NewMessageComponent implements OnInit {
   }
 
   post() {
-    // console.log(this.message);
+    console.log('post function is called');
     this.webService.postMessage(this.message);
     this.onPosted.emit(this.message);
   }

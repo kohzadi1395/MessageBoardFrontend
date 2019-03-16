@@ -23,6 +23,10 @@ const routes = [{
   {
     path: 'messages',
     component: MessageComponentComponent
+  },
+  {
+    path: 'messages/:name',
+    component: MessageComponentComponent
   }];
 
 @NgModule({
