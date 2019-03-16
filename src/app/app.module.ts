@@ -10,21 +10,26 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {NewMessageComponent} from './new-message/new-message.component';
 import {FormsModule} from "@angular/forms";
+import {NavcomponentComponent} from './navcomponent/navcomponent.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponentComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NavcomponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     FormsModule
+
   ],
   providers: [WebService],
   bootstrap: [AppComponent]

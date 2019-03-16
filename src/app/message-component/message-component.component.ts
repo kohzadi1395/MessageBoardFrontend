@@ -7,16 +7,13 @@ import {WebService} from "../web-service";
   styleUrls: ['./message-component.component.css']
 })
 export class MessageComponentComponent implements OnInit {
-  messages = [];
+  ws: WebService;
 
   constructor(private webService: WebService) {
-
+    this.ws = webService;
   }
 
   async ngOnInit() {
-    let response = await this.webService.getMessage();
-    // console.log(response.json());
-    this.messages = response.json();
   }
 
 }

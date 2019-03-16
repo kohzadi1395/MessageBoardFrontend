@@ -2,7 +2,7 @@
   message-component works!
 </h1>
 
-<div *ngFor="let message of messages" style="margin-top: 5px">
+<div *ngFor="let message of this.ws.messages" style="margin-top: 5px">
   <mat-card>
     <mat-card-title>
       {{message.owner}}

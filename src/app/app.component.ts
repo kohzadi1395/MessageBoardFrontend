@@ -9,10 +9,10 @@ import {MessageComponentComponent} from "./message-component/message-component.c
 export class AppComponent {
   title = 'frontend';
 
-  @ViewChild(MessageComponentComponent) message: MessageComponentComponent
+  @ViewChild(MessageComponentComponent) message: MessageComponentComponent;
 
   onPosted(message) {
     // console.log(message);
-    this.message.messages.push(message);
+    this.message.ws.messages.push(message);
   }
 }

@@ -8,7 +8,6 @@ import {WebService} from "../web-service";
 })
 export class NewMessageComponent implements OnInit {
 
-  messages = [];
   owner = "Test";
   Text = "Hi";
 
@@ -16,16 +15,14 @@ export class NewMessageComponent implements OnInit {
   message = {
     owner: this.owner,
     text: this.Text
-  }
+  };
 
   constructor(private webService: WebService) {
 
   }
 
   async ngOnInit() {
-    let response = await this.webService.getMessage();
-    // console.log(response.json());
-    this.messages = response.json();
+
   }
 
   post() {
