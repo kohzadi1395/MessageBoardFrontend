@@ -1,3 +1,23 @@
-<p>
-  register works!
-</p>
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="example-full-width">
+      <input [ngClass]="{'error':isValid('firstName')}"
+             placeholder="First Name" formControlName="firstName">
+    </div>
+    <div class="example-full-width">
+      <input [ngClass]="{'error':isValid('lastName')}" placeholder="Last Name" formControlName="lastName">
+    </div>
+    <div class="example-full-width">
+      <input [ngClass]="{'error':isValid('email')}" placeholder="Email" type="email" formControlName="email">
+    </div>
+    <div class="example-full-width">
+      <input [ngClass]="{'error':isValid('password')}" placeholder="Password" type="password"
+             formControlName="password">
+    </div>
+    <div class="example-full-width">
+      <input [ngClass]="{'error':isValid('confirmPassword')}" placeholder="Confirm Password" type="password"
+             formControlName="confirmPassword">
+    </div>
+    <button color="primary">Register</button>
+  </form>
+</mat-card>

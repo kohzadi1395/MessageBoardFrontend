@@ -9,12 +9,13 @@ import {WebService} from "./web-service";
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {NewMessageComponent} from './new-message/new-message.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavComponent} from './navcomponent/nav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {RouterModule} from "@angular/router";
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 const routes = [{
@@ -28,6 +29,10 @@ const routes = [{
   {
     path: 'messages/:name',
     component: MessageComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }];
 
 @NgModule({
@@ -48,8 +53,10 @@ const routes = [{
     HttpClientModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    MatInputModule,
 
 
   ],

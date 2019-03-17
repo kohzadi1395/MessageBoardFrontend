@@ -30,4 +30,5 @@ export class NewMessageComponent implements OnInit {
     this.webService.postMessage(this.message);
     this.onPosted.emit(this.message);
   }
+
 }
