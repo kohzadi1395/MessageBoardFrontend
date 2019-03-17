@@ -1,10 +1,14 @@
 import {Http} from '@angular/http';
 import {Injectable} from "@angular/core";
+import 'rxjs/add/operator/toPromise';
+import {Subject} from 'rxjs/Rx';
 
 @Injectable()
 export class WebService {
   Base_Url = 'http://localhost:58478/api';
-  public messages = [];
+  private messageStore = [];
+  private messageSubject = new Subject();
+  messages = this.messageSubject.asObservable();
 
   constructor(private http: Http) {//, private snackBar:MatSnackBar) {
     this.getMessage(null);
@@ -24,7 +28,8 @@ export class WebService {
   getMessage(user) {
     user = (user) ? '/' + user : '';
     this.http.get(this.Base_Url + '/Messages' + user).subscribe(response => {
-      this.messages = response.json()
+      this.messageStore = response.json();
+      this.messageSubject.next(this.messageStore);
     }, error => {
       this.handleError('Unable to get message');
     });

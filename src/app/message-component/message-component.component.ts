@@ -8,15 +8,18 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./message-component.component.css']
 })
 export class MessageComponentComponent implements OnInit {
-  ws: WebService;
+
+  // messages;
+  sw: WebService;
 
   constructor(private webService: WebService, private router: ActivatedRoute) {
-    this.ws = webService;
+    this.sw = this.webService
   }
 
   async ngOnInit() {
     let name = this.router.snapshot.params.name;
     this.webService.getMessage(name)
+
   }
 
 }

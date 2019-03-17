@@ -46,7 +46,9 @@ const routes = [{
     HttpClientModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+
 
   ],
   providers: [WebService],
