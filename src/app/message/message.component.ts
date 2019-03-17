@@ -4,16 +4,12 @@ import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-message-component',
-  templateUrl: './message-component.component.html',
-  styleUrls: ['./message-component.component.css']
+  templateUrl: './message.component.html',
+  styleUrls: ['./message.component.css']
 })
-export class MessageComponentComponent implements OnInit {
-
-  // messages;
-  sw: WebService;
+export class MessageComponent implements OnInit {
 
   constructor(private webService: WebService, private router: ActivatedRoute) {
-    this.sw = this.webService
   }
 
   async ngOnInit() {

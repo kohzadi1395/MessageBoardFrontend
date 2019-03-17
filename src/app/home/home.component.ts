@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MessageComponentComponent} from "../message-component/message-component.component";
+import {MessageComponent} from "../message/message.component";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import {MessageComponentComponent} from "../message-component/message-component.
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild(MessageComponentComponent) message: MessageComponentComponent;
+  @ViewChild(MessageComponent) message: MessageComponent;
   constructor() {
   }
 
