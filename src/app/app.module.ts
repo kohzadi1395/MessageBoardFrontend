@@ -16,6 +16,7 @@ import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {MatInputModule} from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
 
 
 const routes = [{
@@ -33,6 +34,10 @@ const routes = [{
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }];
 
 @NgModule({
@@ -43,6 +48,7 @@ const routes = [{
     NavComponent,
     HomeComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
