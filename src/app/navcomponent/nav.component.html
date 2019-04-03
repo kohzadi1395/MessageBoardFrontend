@@ -2,5 +2,9 @@
   <mat-toolbar-row>
     <button mat-stroked-button color="primary" routerLink="/">Messages Board</button>
     <button mat-stroked-button color="primary" routerLink="/messages">Messages</button>
+    <span style="flex: 1 1 auto"></span>
+    <button mat-stroked-button color="primary" routerLink="/register" *ngIf="!auth.isAuthentication">Register</button>
+    <button mat-stroked-button color="primary" routerLink="/register" *ngIf="auth.isAuthentication">Welcome {{auth.name}}</button>
+    <button mat-stroked-button *ngIf="auth.isAuthentication" (click)="auth.logout()">Logout {{auth.name}}</button>
   </mat-toolbar-row>
 </mat-toolbar>

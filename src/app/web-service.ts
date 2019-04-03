@@ -1,16 +1,17 @@
 import {Http} from '@angular/http';
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Subject} from 'rxjs/Rx';
 
 @Injectable()
 export class WebService {
-  Base_Url = 'http://localhost:58478/api';
+  BaseUrl = 'http://localhost:53021/api';
   private messageStore = [];
   private messageSubject = new Subject();
   messages = this.messageSubject.asObservable();
 
-  constructor(private http: Http) {//, private snackBar:MatSnackBar) {
+  constructor(private http: Http) {
+    // , private snackBar:MatSnackBar) {
     this.getMessage(null);
   }
 
@@ -26,8 +27,9 @@ export class WebService {
   //
   // }
   getMessage(user) {
+
     user = (user) ? '/' + user : '';
-    this.http.get(this.Base_Url + '/Messages' + user).subscribe(response => {
+    this.http.get(this.BaseUrl + '/Messages' + user).subscribe(response => {
       this.messageStore = response.json();
       this.messageSubject.next(this.messageStore);
     }, error => {
@@ -37,14 +39,13 @@ export class WebService {
 
   async postMessage(message) {
     try {
-      let response = await this.http.post(this.Base_Url + '/Messages', message).toPromise();
+      const response = await this.http.post(this.BaseUrl + '/Messages', message).toPromise();
 
       // this.messages.push(message)
       this.getMessage(null);
       // this.messageStore.push(response.json())
       // this.messageSubject.next(this.messageStore);
-    }
-    catch (e) {
+    } catch (e) {
       this.handleError('Unable to post message');
     }
   }

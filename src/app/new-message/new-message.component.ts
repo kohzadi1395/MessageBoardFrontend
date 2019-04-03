@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {WebService} from "../web-service";
+import {WebService} from '../web-service';
 
 @Component({
   selector: 'app-new-message',
@@ -8,8 +8,8 @@ import {WebService} from "../web-service";
 })
 export class NewMessageComponent implements OnInit {
 
-  owner = "Test";
-  Text = "Hi";
+  owner = 'Test';
+  Text = 'Hi';
 
   @Output() onPosted = new EventEmitter();
   message = {

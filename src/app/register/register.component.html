@@ -17,7 +17,10 @@
     <div class="example-full-width">
       <input [ngClass]="{'error':isValid('confirmPassword')}" placeholder="Confirm Password" type="password"
              formControlName="confirmPassword">
+      <span *ngIf="form.errors?.misMatch">Password is not match</span>
     </div>
-    <button color="primary">Register</button>
+    <div class="example-full-width">
+      <button color="primary">Register</button>
+    </div>
   </form>
 </mat-card>
